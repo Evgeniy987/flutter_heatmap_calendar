@@ -171,6 +171,12 @@ class HeatMapPage extends StatelessWidget {
                 ),
               ],
             ),
+            HeatMapWeekText(
+              margin: margin,
+              fontSize: fontSize,
+              size: size,
+              fontColor: textColor,
+            ),
           ],
         ),
       ],
