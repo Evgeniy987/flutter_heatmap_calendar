@@ -111,7 +111,7 @@ class HeatMapColumn extends StatelessWidget {
             selectedColor: datasets?.keys.contains(DateTime(
                         startDate.year,
                         startDate.month,
-                        startDate.day - startDate.weekday % 7 + i)) ??
+                        startDate.day - startDate.weekday - 1 + i)) ??
                     false
                 // If colorMode is ColorMode.opacity,
                 ? colorMode == ColorMode.opacity
@@ -121,7 +121,7 @@ class HeatMapColumn extends StatelessWidget {
                     ? colorsets?.values.first.withOpacity((datasets?[DateTime(
                                 startDate.year,
                                 startDate.month,
-                                startDate.day + i - (startDate.weekday % 7))] ??
+                                startDate.day + i - (startDate.weekday - 1))] ??
                             1) /
                         (maxValue ?? 1))
                     // Else if colorMode is ColorMode.Color.
@@ -131,7 +131,7 @@ class HeatMapColumn extends StatelessWidget {
                     : DatasetsUtil.getColor(
                         colorsets,
                         datasets?[DateTime(startDate.year, startDate.month,
-                            startDate.day + i - (startDate.weekday % 7))])
+                            startDate.day + i - (startDate.weekday - 1))])
                 : null,
           ),
         ),

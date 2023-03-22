@@ -101,7 +101,7 @@ class HeatMapPage extends StatelessWidget {
 
     // Set cursor(position) to first day of weeks
     // until cursor reaches the final week.
-    for (int datePos = 0 - (startDate.weekday % 7);
+    for (int datePos = 0 - (startDate.weekday - 1);
         datePos <= _dateDifferent;
         datePos += 7) {
       // Get first day of week by adding cursor's value to startDate.

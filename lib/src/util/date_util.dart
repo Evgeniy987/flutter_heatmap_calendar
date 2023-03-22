@@ -72,7 +72,7 @@ class DateUtil {
           _endDate,
           endDayOfMonth(_endDate).day - _startDate.day >= DAYS_IN_WEEK
               ? DAYS_IN_WEEK
-              : endDayOfMonth(_endDate).day - _startDate.day);
+              : endDayOfMonth(_endDate).day - _startDate.day + 1);
     }
     return _savedMonth;
   }
