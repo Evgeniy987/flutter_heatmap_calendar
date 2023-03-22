@@ -111,7 +111,7 @@ class HeatMapColumn extends StatelessWidget {
             selectedColor: datasets?.keys.contains(DateTime(
                         startDate.year,
                         startDate.month,
-                        startDate.day - startDate.weekday - 1 + i)) ??
+                        startDate.day - (startDate.weekday - 1) + i)) ??
                     false
                 // If colorMode is ColorMode.opacity,
                 ? colorMode == ColorMode.opacity
