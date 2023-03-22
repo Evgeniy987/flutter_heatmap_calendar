@@ -61,7 +61,7 @@ class DateUtil {
       final DateTime referenceDate) {
     DateTime _startDate = startDayOfMonth(referenceDate);
     DateTime _endDate = DateTime(_startDate.year, _startDate.month,
-        _startDate.day + DAYS_IN_WEEK - _startDate.weekday % DAYS_IN_WEEK);
+        _startDate.day + DAYS_IN_WEEK - _startDate.weekday % DAYS_IN_WEEK - 1);
     DateTime _finalDate = endDayOfMonth(referenceDate);
     List<Map<DateTime, DateTime>> _savedMonth = [];
 
@@ -72,7 +72,7 @@ class DateUtil {
           _endDate,
           endDayOfMonth(_endDate).day - _startDate.day >= DAYS_IN_WEEK
               ? DAYS_IN_WEEK
-              : endDayOfMonth(_endDate).day - _startDate.day + 1);
+              : endDayOfMonth(_endDate).day - _startDate.day);
     }
     return _savedMonth;
   }
